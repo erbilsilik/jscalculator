@@ -14,7 +14,15 @@ function Calculator(){
 	}
 
 	this.addToScreen = function(value){
-		this.screen.push(value);
+		if (parseInt(value) && parseInt(this.screen[this.screen.length-1])){
+			this.screen[this.screen.length-1]+= value;
+		}
+
+		else{
+			this.screen.push(value);
+		}
+
 		this.update();
+
 	}
 }
